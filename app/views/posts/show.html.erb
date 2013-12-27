@@ -1,0 +1,22 @@
+<center><img src="http://www.stoppress.co.nz/images/uploads/2009/11/NZ_Post.jpg" alt="" /></center>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <center><strong>Ad</strong></center>
+  <center><%= @post.name %></center>
+</p>
+
+<p>
+  <center><strong>Başlık</strong></center>
+  <center><%= @post.title %></center>
+</p>
+
+<p>
+  
+  <center><strong>İçerik</strong></center>
+  <center><%= @post.content %></center>
+</p>
+
+
+<center><%= link_to 'Düzenle', edit_post_path(@post) %> |
+<%= link_to 'Geri', posts_path %> | <%= link_to 'Ana Sayfa', root_path %></center>

@@ -1,0 +1,35 @@
+<h1>Tüm Gönderiler</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>İsim</th>
+      <th>Başlık</th>
+      <th>İçerik/Gönderi</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.name %></td>
+        <td><%= post.title %></td>
+        <td><%= post.content %></td>
+        <td><%= link_to 'Göster', post %></td>
+        <td><%= link_to 'Düzenle', edit_post_path(post) %></td>
+        <td><%= link_to 'Sil', post, method: :delete, data: { confirm: 'Emin misin?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Yeni Gönderi', new_post_path %> |
+<%= link_to 'Ana Sayfa', root_path %>
+
+
