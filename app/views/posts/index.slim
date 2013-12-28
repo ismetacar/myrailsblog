@@ -1,24 +1,32 @@
-h1 Tüm Gönderiler
-table
-	thead
-    	tr
-      		th İsim
-      		th Başlık
-      		th İçerik/Gönderi
-		    th 
-      		th
-      		th
-	tbody
-    	- @posts.each do |post|
-      		tr
-        		td= post.name
-      			td= post.title
-        		td= post.content
-        		td= link_to 'Göster', post
-        		td= link_to 'Düzenle', edit_post_path(post)
-        		td= link_to 'Sil', post, method: :delete, data: { confirm: 'Emin misin?' }
-= link_to 'Yeni Gönderi', new_post_path
-| \
-= link_to 'Ana Sayfa', root_path
-
-footer ismetacar
+= stylesheet_link_tag "http://getbootstrap.com/2.3.2/assets/css/bootstrap.css"
+= javascript_include_tag "http://getbootstrap.com/2.3.2/assets/js/jquery.js"
+= javascript_include_tag "http://getbootstrap.com/2.3.2/assets/js/bootstrap-button.js"
+= javascript_include_tag "https://code.jquery.com/jquery-1.10.2.min.js"
+= javascript_include_tag "http://getbootstrap.com/dist/js/bootstrap.min.js"
+= javascript_include_tag "http://getbootstrap.com/docs-assets/js/holder.js"
+center
+  h1 Tüm Gönderiler
+center
+  table
+	  thead
+      	  tr
+      		  th İsim
+      		  th Başlık
+      		  th İçerik/Gönderi
+		      th 
+      		  th
+      		  th
+	  tbody
+      	  - @posts.each do |post|
+      		  tr
+        		  td= post.name
+      			  td= post.title
+        		  td= post.content
+        		  td= link_to 'Göster', post, class:"btn btn-lg btn-success"
+        		  td= link_to 'Düzenle', edit_post_path(post), class:"btn btn-warning"
+        		  td= link_to 'Sil', post, class:"btn btn-danger", method: :delete, data: { confirm: 'Emin misin?' }
+center
+  = link_to 'Yeni Gönderi', new_post_path, class:"btn btn-info"
+  = link_to 'Ana Sayfa', root_path, class:"btn btn-primary"
+center
+  footer ismetacar's blog
