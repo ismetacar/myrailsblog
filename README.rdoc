@@ -8,4 +8,6 @@ $ bundle install
 
 $ rake db:migrate
 
+(gerekirse schema.rb dosyası silinebilir. daha sonra rake db:migrate komutu verilir. )
+
 $ rails s
